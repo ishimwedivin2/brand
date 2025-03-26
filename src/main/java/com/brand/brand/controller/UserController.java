@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     // Endpoint to create or update a user
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<User> createOrUpdateUser(@RequestBody User user) {
         User savedUser = userService.saveUser(user);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
